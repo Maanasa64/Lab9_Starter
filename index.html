@@ -69,21 +69,21 @@
     </form>
 
     <section id="error-btns">
-      <button>Console Log</button>
-      <button>Console Error</button>
-      <button>Console Count</button>
-      <button>Console Warn</button>
-      <button>Console Assert</button>
-      <button>Console Clear</button>
-      <button>Console Dir</button>
-      <button>Console dirxml</button>
-      <button>Console Group Start</button>
-      <button>Console Group End</button>
-      <button>Console Table</button>
-      <button>Start Timer</button>
-      <button>End Timer</button>
-      <button>Console Trace</button>
-      <button>Trigger a Global Error</button>
+      <button onclick="consoleLogDemo()">Console Log</button>
+      <button onclick="consoleErrorDemo()">Console Error</button>
+      <button onclick="consoleCountDemo()">Console Count</button>
+      <button onclick="consoleWarnDemo()">Console Warn</button>
+      <button onclick="consoleAssertDemo()">Console Assert</button>
+      <button onclick="consoleClearDemo()">Console Clear</button>
+      <button onclick="consoleDirDemo()">Console Dir</button>
+      <button onclick="consoleDirXmlDemo()">Console dirxml</button>
+      <button onclick="consoleGroupStartDemo()">Console Group Start</button>
+      <button onclick="consoleGroupEndDemo()">Console Group End</button>
+      <button onclick="consoleTableDemo()">Console Table</button>
+      <button onclick="consoleStartTimerDemo()">Start Timer</button>
+      <button onclick="consoleEndTimerDemo()">End Timer</button>
+      <button onclick="consoleTraceDemo()">Console Trace</button>
+      <button onclick="triggerGlobalError()">Trigger a Global Error</button>
     </section>
   </main>
 
@@ -100,9 +100,87 @@
 
     let errorBtns = Array.from(document.querySelectorAll('#error-btns > button'));
 
-    // Start your code here
-    // You may move this JS to another file if you wish
+    // Console Log
+    function consoleLogDemo() {
+      console.log("Console Log");
+    }
+
+    // Console Error
+    function consoleErrorDemo() {
+      console.error("Console Error");
+    }
+
+    // Console Count
+    function consoleCountDemo() {
+      console.count("Console Count");
+    }
+
+    // Console Warn
+    function consoleWarnDemo() {
+      console.warn("Console Warn");
+    }
+
+    // Console Assert
+    function consoleAssertDemo() {
+      console.assert(1 + 3 == 3, "The number does not equal 3");
+    }
+
+    // Console Clear
+    function consoleClearDemo() {
+      console.clear();
+    }
+
+    // Console Dir
+    function consoleDirDemo() {
+      console.dir(window);
+    }
+
+    // Console dirxml
+    function consoleDirXmlDemo() {
+      console.dirxml(errorBtns[0]);
+    }
+
+    // Console Group Start
+    function consoleGroupStartDemo() {
+      console.group("Group start");
+    }
+
+    // Console Group End
+    function consoleGroupEndDemo() {
+      console.groupEnd();
+    }
+
+    // Console Table
+    function consoleTableDemo() {
+      const data = [
+        { name: "Maanasa", age: "19"},
+        { name: "Nancy", age: "23"},
+        { name: "Percy", age: "14"}
+      ];
+      console.table(data);
+    }
+
+    // Start Timer
+    function consoleStartTimerDemo() {
+      console.time("Timer");
+    }
+
+    // End Timer
+    function consoleEndTimerDemo() {
+      console.timeEnd("Timer");
+    }
+
+    // Console Trace
+    function consoleTraceDemo() {
+      const first = () => { second(); };
+      const second = () => { third(); };
+      const third = () => { fourth(); };
+      const fourth = () => { console.trace(); };
+      first();
+    }
+
   </script>
 </body>
 
 </html>
+
